@@ -6,8 +6,14 @@ $(document).ready(function(){
   var numbers=[];
   for (var i = 0; i < 5; i++) {
     numbers.push(Math.floor(Math.random()*100)+1);
+    if(numbers.includes(numbers[i])){
+      numbers[i]=((Math.floor(Math.random()*100)+1));
+
+    }
   }
-  alert(numbers);
+
+  alert("i numeri generati sono "+ numbers);
+
   var numbersUser=[];
   var thereAreN=[];
   setTimeout(function () {
@@ -17,9 +23,15 @@ $(document).ready(function(){
       if (numbers.includes(numbersUser[i])){
         thereAreN.push(numbersUser[i]);
       }
-  }  }, 30000);
 
-  console.log(thereAreN);
+  }
+  if(numbersUser.length==5){
+    $('#same').text("i numeri azzeccati sono: "+ thereAreN);
+    $('#numbers').text("numeri casuali sono "+numbers);;
+  }
+}, 3000);
+
+
 
 
 });
