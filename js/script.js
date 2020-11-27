@@ -23,16 +23,17 @@ while(numbers.length<5) {
   var thereAreN=[];
   setTimeout(function () {
 
-    while(numbers.length<5) {
-        number=((Math.floor(Math.random()*100)+1));
-        if(!numbers.includes(number)){
-          numbers.push(number);
+    while(numbersUser.length<5) {
+
+        number=parseInt(prompt('inserisci i numeri che ricordi'));
+        if(!numbersUser.includes(number)){
+          numbersUser.push(number);
         }
       }
       //esiste
       for (var i=0; i< numbersUser.length; i++){
         var numberNow=numbersUser[i];
-        if (numberBot.includes(numberNow)){
+        if (numbers.includes(numberNow)){
           thereAreN.push(numberNow);
         }
       }
@@ -40,7 +41,7 @@ while(numbers.length<5) {
     $('#same').text("i numeri azzeccati sono: "+ thereAreN);
     $('#numbers').text("numeri casuali sono "+numbers);;
   }
-}, 3000);
+}, 1000);
 
 
 
