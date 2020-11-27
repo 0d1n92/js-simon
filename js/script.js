@@ -4,7 +4,9 @@
 $(document).ready(function(){
   // Un alert espone 5 numeri casuali diversi.
   var numbers=[];
+  var numberBot;
 while(numbers.length<5) {
+  //prima creo una variabile di tipo int per farla controllare
     numberBot=((Math.floor(Math.random()*100)+1));
     if(!numbers.includes(numberBot)){
       numbers.push(numberBot);
