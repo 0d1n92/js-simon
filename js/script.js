@@ -4,27 +4,36 @@
 $(document).ready(function(){
   // Un alert espone 5 numeri casuali diversi.
   var numbers=[];
-  for (var i = 0; i < 5; i++) {
-    numbers.push(Math.floor(Math.random()*100)+1);
-    if(numbers.includes(numbers[i])){
-      numbers[i]=((Math.floor(Math.random()*100)+1));
-
+while(numbers.length<5) {
+    numberBot=((Math.floor(Math.random()*100)+1));
+    if(!numbers.includes(numberBot)){
+      numbers.push(numberBot);
     }
+
+
   }
+
 
   alert("i numeri generati sono "+ numbers);
 
   var numbersUser=[];
+  var number;
   var thereAreN=[];
   setTimeout(function () {
 
-  for (var i = 0; i < numbers.length; i++) {
-      numbersUser[i]= parseInt(prompt("quali numeri ti ricordi?"));
-      if (numbers.includes(numbersUser[i])){
-        thereAreN.push(numbersUser[i]);
+    while(numbers.length<5) {
+        number=((Math.floor(Math.random()*100)+1));
+        if(!numbers.includes(number)){
+          numbers.push(number);
+        }
       }
-
-  }
+      //esiste
+      for (var i=0; i< numbersUser.length; i++){
+        var numberNow=numbersUser[i];
+        if (numberBot.includes(numberNow)){
+          thereAreN.push(numberNow);
+        }
+      }
   if(numbersUser.length==5){
     $('#same').text("i numeri azzeccati sono: "+ thereAreN);
     $('#numbers').text("numeri casuali sono "+numbers);;
